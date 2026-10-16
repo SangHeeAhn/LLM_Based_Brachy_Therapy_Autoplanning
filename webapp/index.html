@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Brachy RT auto planning</title>
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="topbar">
+  <div class="brand">
+    <span class="brand-mark" id="brand-mark"></span>
+    <span class="brand-name">Brachy&nbsp;RT&nbsp;<b>auto&nbsp;planning</b></span>
+  </div>
+  <div class="top-right">
+    <span class="pill" id="queue-pill"></span>
+    <span class="pill" id="lm-pill"></span>
+    <span class="orgbox" id="model-box">모델 미연결</span>
+    <button class="icon-btn" id="settings-btn" title="LM Studio 설정"></button>
+  </div>
+</header>
+
+<div class="layout">
+  <nav class="rail" id="rail"></nav>
+
+  <aside class="sidebar">
+    <div class="searchbox" id="searchbox">
+      <input id="search" placeholder="환자 ID · 이름 · Plan 검색">
+    </div>
+    <button class="wide-btn" id="refresh-btn">환자 목록 새로고침</button>
+    <ul class="catlist" id="catlist"></ul>
+    <div class="side-foot" id="side-foot"></div>
+  </aside>
+
+  <main class="main" id="view"></main>
+</div>
+
+<div class="modal-back" id="settings-modal" hidden>
+  <div class="modal">
+    <h3>LM Studio 설정</h3>
+    <label for="cfg-url">Base URL</label>
+    <input id="cfg-url" value="http://localhost:1234/v1">
+    <label for="cfg-model">모델 (비우면 로드된 첫 모델 자동 선택)</label>
+    <select id="cfg-model"></select>
+    <div class="hint" id="cfg-hint"></div>
+    <div class="errline" id="cfg-err"></div>
+    <div class="modal-act">
+      <button class="btn" id="cfg-cancel">취소</button>
+      <button class="btn dark" id="cfg-save">저장 후 재연결</button>
+    </div>
+  </div>
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>

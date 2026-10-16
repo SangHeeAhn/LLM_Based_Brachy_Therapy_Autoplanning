@@ -1,0 +1,19 @@
+# 코드 파일만 추적 (화이트리스트 방식)
+*
+!*/
+!*.py
+!*.js
+!*.html
+!*.css
+!*.bat
+!*.sh
+!requirements*.txt
+!.gitignore
+# 코드여도 제외
+__pycache__/
+wheels/
+work/
+incoming/
+outgoing/
+Geneva_Case/
+Reference/
